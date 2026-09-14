@@ -374,7 +374,8 @@ html.nofx .rv,html.nofx .rv-s,html.nofx .tok,html.nofx .rline{
 .pc .lvl{font-family:'Anton',sans-serif;font-size:30px;text-transform:uppercase}
 .pc .amt{font-family:'Anton',sans-serif;font-size:52px;line-height:.9}
 .pc .note2{font-size:13px;color:var(--ink-2);font-weight:600}
-.pc.best{background:var(--yellow);position:relative}
+.pc.best{background:var(--yellow);position:relative;order:-1}
+@media (min-width:820px){.pc.best{order:0}}
 .pc.best .tagx{position:absolute;top:-12px;right:20px;background:var(--ink);color:#fff;font-size:11px;
   font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;border-radius:999px}
 .pc .old{text-decoration:line-through;opacity:.45;font-family:'Inter';font-size:20px;font-weight:800;margin-left:8px}
@@ -449,6 +450,122 @@ html.nofx .rv,html.nofx .rv-s,html.nofx .tok,html.nofx .rline{
 .tgl[aria-checked="true"]{background:#1E86D6}
 .tgl[aria-checked="true"]::after{transform:translateX(20px)}
 .novoice{padding:16px;border-radius:18px;background:var(--pink-soft);font-size:13.5px;line-height:1.5;font-weight:600}
+
+
+/* ============ РЕКЛАМА: новые блоки ============ */
+.ad-dark{background:var(--night);color:#fff}
+.fine{font-size:12px;color:#7C7C8A;font-weight:600;margin-top:10px}
+.curve{background:#1D1D24;border-radius:var(--r-lg);padding:20px 16px 18px;margin:0}
+.curve svg{width:100%;height:auto;display:block}
+.curve .grid line{stroke:#3A3A46;stroke-width:1.5}
+.curve .ax{fill:#7C7C8A;font:700 10px Inter,sans-serif}
+.curve path{fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:900;stroke-dashoffset:900;transition:stroke-dashoffset 2.2s var(--ease)}
+.curve .c-bad{stroke:var(--pink-deep)}
+.curve .c-good{stroke:var(--yellow);transition-delay:.5s}
+.curve circle{opacity:0;transition:opacity .4s 2.2s}
+.curve .dot-bad{fill:var(--pink-deep)} .curve .dot-good{fill:var(--yellow);transition-delay:2.6s}
+.curve.in path{stroke-dashoffset:0}
+.curve.in circle{opacity:1}
+.curve figcaption{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:10px;font-size:12.5px;font-weight:700;color:#C9C9D2}
+.curve .lg{display:inline-block;width:18px;height:4px;border-radius:2px;margin-right:7px;vertical-align:middle}
+.lg-bad{background:var(--pink-deep)} .lg-good{background:var(--yellow)}
+
+.painlist{display:grid;gap:10px}
+@media (min-width:820px){.painlist{grid-template-columns:1fr 1fr}}
+.pain{display:flex;gap:14px;align-items:flex-start;text-align:left;width:100%;background:#1D1D24;border-radius:26px;padding:18px 18px;
+  border:1px solid #2A2A33;transition:transform .3s var(--ease),border-color .3s}
+.pain:hover{transform:translateY(-3px);border-color:var(--pink-deep)}
+.pain .pi{flex:0 0 46px;height:46px;border-radius:15px;display:grid;place-items:center;font-size:22px;background:#2A2A33}
+.pain .pt{display:block;min-width:0}
+.pain b{display:block;font-size:16px;line-height:1.3;color:#fff;margin-bottom:4px}
+.pain .pd{display:block;font-size:13.5px;line-height:1.5;color:#A8A8B4;font-weight:500}
+.pain.hit{border-color:var(--yellow)}
+
+.calc{background:#fff;border-radius:var(--r-lg);padding:22px 18px 24px;box-shadow:0 20px 60px rgba(120,130,0,.25)}
+.crow{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:center;margin-bottom:16px}
+.crow label{grid-row:1;grid-column:1;font-size:14px;font-weight:800}
+.crow output{grid-row:1;grid-column:2;font-family:'Anton',sans-serif;font-size:22px;text-align:right;font-variant-numeric:tabular-nums}
+.crow input{grid-column:1/-1;width:100%;accent-color:var(--ink);height:28px}
+.cbars{display:grid;gap:10px;margin-top:8px}
+.cbar{display:grid;grid-template-columns:86px 1fr auto;gap:10px;align-items:center}
+.cbar .cl{font-size:13px;font-weight:800}
+.cbar .ct{height:26px;border-radius:9px;background:#F1F1F4;overflow:hidden}
+.cbar .ct i{display:block;height:100%;width:0;background:var(--pink-deep);border-radius:9px;transition:width .6s var(--ease)}
+.cbar.good .ct i{background:var(--mint)}
+.cbar b{font-family:'Anton',sans-serif;font-size:22px;min-width:76px;text-align:right;font-variant-numeric:tabular-nums}
+.cverdict{margin-top:16px;font-size:16px;font-weight:800;line-height:1.4}
+.cverdict em{font-style:normal;background:var(--yellow);padding:0 6px;border-radius:6px}
+
+.bento{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (min-width:900px){.bento{grid-template-columns:repeat(4,1fr);gap:14px}}
+.tile{position:relative;border-radius:22px;overflow:hidden;background:#EEF0F4;cursor:zoom-in;
+  box-shadow:0 8px 28px rgba(11,11,12,.10);transition:transform .35s var(--ease),box-shadow .35s}
+.tile:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(11,11,12,.18)}
+.tile img{width:100%;height:100%;object-fit:cover;object-position:top left;aspect-ratio:16/10;display:block}
+.tile.wide{grid-column:span 2}
+.tile.wide img{aspect-ratio:16/8}
+.tile .tc{position:absolute;left:8px;right:8px;bottom:8px;background:rgba(255,255,255,.94);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:14px;padding:8px 11px}
+.tile .tc b{display:block;font-size:12.5px;line-height:1.25}
+.tile .tc i{display:block;font-style:normal;font-size:11px;color:var(--gray);font-weight:600;line-height:1.3;margin-top:1px}
+@media (max-width:520px){
+  .tile img{aspect-ratio:4/3.4}
+  .tile.wide img{aspect-ratio:16/9}
+  .tile .tc{left:6px;right:6px;bottom:6px;padding:6px 9px;border-radius:11px}
+  .tile .tc b{font-size:11px}
+  .tile .tc i{display:none}
+}
+.phones-sec{overflow:hidden}
+
+.phones{position:relative;height:440px;margin-top:24px}
+.ph{position:absolute;left:50%;bottom:0;width:190px;border-radius:30px;background:#0B0B0C;padding:7px;
+  box-shadow:0 26px 60px rgba(11,11,12,.35);transform-origin:50% 120%;
+  transform:translateX(-50%) rotate(0deg);transition:transform 1s var(--ease)}
+.ph img{border-radius:24px;width:100%;display:block;aspect-ratio:9/16;object-fit:cover;object-position:top}
+.ph::before{content:"";position:absolute;top:13px;left:50%;width:54px;height:14px;border-radius:9px;background:#0B0B0C;transform:translateX(-50%);z-index:2}
+@media (min-width:768px){.phones{height:540px}.ph{width:240px}}
+
+.vs{display:grid;border-radius:var(--r-lg);overflow:hidden;border:1px solid #E6E6EA}
+.vsr{display:grid;grid-template-columns:1fr 1fr}
+.vsr>div{padding:14px 14px;font-size:13.5px;line-height:1.45;font-weight:600}
+.vsr>div:first-child{background:#FFF1F6;color:#7A2A48}
+.vsr>div:last-child{background:#EDFBF3;color:#145C39}
+.vsr.head>div{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;font-weight:400}
+.vsr+.vsr>div{border-top:1px solid rgba(11,11,12,.06)}
+@media (min-width:768px){.vsr>div{padding:18px 24px;font-size:15.5px}}
+
+.quotes{display:grid;gap:12px}
+@media (min-width:900px){.quotes{grid-template-columns:repeat(3,1fr)}}
+.quote{background:#1D1D24;border-radius:28px;padding:22px 22px 20px;border:1px solid #2A2A33;margin:0}
+.quote blockquote{font-size:17px;line-height:1.45;font-weight:700;color:#fff;margin:0}
+.quote blockquote mark{background:var(--yellow);color:var(--ink);padding:0 4px;border-radius:5px}
+.quote figcaption{margin-top:12px;font-size:12px;font-weight:700;color:#8A8A96}
+.wall{columns:2;column-gap:10px}
+@media (min-width:900px){.wall{columns:4;column-gap:14px}}
+.wall .wi{break-inside:avoid;margin-bottom:10px;border-radius:16px;overflow:hidden;cursor:zoom-in;
+  background:#1E1E22;box-shadow:0 8px 24px rgba(0,0,0,.35);transition:transform .3s var(--ease)}
+.wall .wi:hover{transform:scale(1.02)}
+.wall .wi img{width:100%;display:block}
+.wall .wi.extra{display:none}
+.wall.all .wi.extra{display:block}
+
+.offer{display:grid;gap:8px;margin:0 0 6px}
+@media (min-width:820px){.offer{grid-template-columns:1fr 1fr;gap:8px 24px}}
+.offer li{position:relative;padding-left:30px;font-size:15px;font-weight:700;line-height:1.4}
+.offer li::before{content:"✓";position:absolute;left:0;top:0;width:21px;height:21px;border-radius:50%;
+  background:var(--ink);color:var(--yellow);font-size:12px;display:grid;place-items:center}
+.cta-pulse{animation:ctaP 2.4s ease-in-out infinite}
+@keyframes ctaP{0%,100%{box-shadow:0 0 0 0 rgba(11,11,12,.35)}50%{box-shadow:0 0 0 14px rgba(11,11,12,0)}}
+
+.lbox{position:fixed;inset:0;z-index:130;background:rgba(11,11,12,.92);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:20px;gap:12px}
+.lbox[hidden]{display:none}
+.lbox img{max-width:100%;max-height:78vh;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.lbox p{color:#fff;font-size:14px;font-weight:700;text-align:center;max-width:60ch}
+.lbx{position:absolute;top:14px;right:18px;color:#fff;font-size:34px;line-height:1}
+html.nofx .curve path{stroke-dashoffset:0!important;transition:none!important}
+html.nofx .curve circle{opacity:1!important}
 
 /* фокус */
 :where(button,a,input,[tabindex]):focus-visible{outline:3px solid #1E86D6;outline-offset:3px}
@@ -759,31 +876,87 @@ html.nofx .rv,html.nofx .rv-s,html.nofx .tok,html.nofx .rline{
 <div class="mq" aria-hidden="true"><div class="mq-in" id="mq2"></div></div>
 
 <!-- ================= STELLAS AD ================= -->
-<section class="sec" id="stellas">
+<section class="sec ad-dark" id="stellas">
   <div class="wrap">
-    <p class="mono-label rv">Дальше — про мою платформу</p>
+    <p class="mono-label rv" style="color:#8A8A96">Дальше — честно, про мою платформу</p>
     <div style="height:14px"></div>
-    <h2 class="kicker rv">Правило ты<br>понял.<br><span style="color:var(--pink-deep)">Рефлекса<br>ещё нет.</span></h2>
-    <div style="height:30px"></div>
-    <div class="story rv" style="max-width:30ch"><p>Проверь себя.</p></div>
-    <div style="height:16px"></div>
-    <div class="lead rv">
-      <p>Ты дочитал до этого места и всё понял. Через два дня немец спросит что-то в лоб —
-        и ты будешь собирать ответ вслух, по кирпичику, пока он вежливо ждёт.</p>
-      <p>Между «понял правило» и «говорю не думая» лежит скучная часть: <b>повторения</b>.
-        Их не заменить ни одним видео на ютубе — там ты смотришь, киваешь и забываешь.</p>
-      <p>И ещё одно. Ты читаешь по-немецки нормально, а сказать не можешь.
-        Это не лень — это <b>пассивный язык</b>. Он вырастает от чтения и умирает без говорения.</p>
-      <p>Понимать на слух и строить самому — два разных навыка. Второй качается только руками и ртом.</p>
+    <h2 class="kicker rv" style="color:#fff">Ты дочитал.<br>Через неделю<br><span style="color:var(--pink)">забудешь почти всё.</span></h2>
+    <div style="height:22px"></div>
+    <p class="lead rv" style="color:#B9B9C4">
+      Это не про тебя лично. Так работает память у всех. Прочитанное один раз правило
+      сгорает за несколько дней, если к нему не возвращаться. Смотри, как это выглядит.
+    </p>
+    <div style="height:26px"></div>
+
+    <!-- кривая забывания -->
+    <figure class="curve rv-s" id="curve">
+      <svg viewBox="0 0 360 200" role="img" aria-label="Схема: без повторений знание падает, с повторениями остаётся высоким">
+        <g class="grid">
+          <line x1="40" y1="20" x2="40" y2="170"/><line x1="40" y1="170" x2="350" y2="170"/>
+          <line x1="40" y1="95" x2="350" y2="95" stroke-dasharray="3 5"/>
+        </g>
+        <text x="8" y="26" class="ax">100%</text><text x="14" y="174" class="ax">0</text>
+        <text x="40" y="190" class="ax">день 1</text><text x="175" y="190" class="ax">3</text><text x="315" y="190" class="ax">неделя</text>
+        <path class="c-bad" d="M40 24 C 70 90, 110 128, 170 142 S 290 156, 350 160"/>
+        <path class="c-good" d="M40 24 C 70 70, 90 80, 100 84 L100 30 C 130 60, 150 64, 170 66 L170 28 C 210 48, 240 52, 260 54 L260 26 C 300 40, 330 42, 350 44"/>
+        <circle class="dot-bad" cx="350" cy="160" r="5"/>
+        <circle class="dot-good" cx="350" cy="44" r="5"/>
+      </svg>
+      <figcaption>
+        <span><i class="lg lg-bad"></i>прочитал один раз</span>
+        <span><i class="lg lg-good"></i>повторил 3 раза с упражнением</span>
+      </figcaption>
+    </figure>
+    <p class="fine rv">Схема по мотивам кривой забывания Эббингауза. Цифры условные, форма — нет.</p>
+
+    <div style="height:46px"></div>
+    <h3 class="big-state rv" style="color:#fff">Узнаёшь себя хоть в одном?</h3>
+    <div style="height:20px"></div>
+    <div class="painlist" id="painlist"></div>
+  </div>
+</section>
+
+<!-- калькулятор потерь -->
+<section class="sec" id="calc" style="background:var(--yellow)">
+  <div class="wrap">
+    <p class="mono-label rv" style="color:rgba(11,11,12,.55)">Посчитай сам</p>
+    <div style="height:12px"></div>
+    <h2 class="disp rv" style="font-size:clamp(34px,9vw,76px)">Сколько стоит<br>немецкий без системы</h2>
+    <div style="height:22px"></div>
+    <div class="calc rv-s">
+      <div class="crow">
+        <label for="cRate">Репетитор, € в час</label>
+        <input type="range" id="cRate" min="15" max="60" step="5" value="30">
+        <output id="oRate">30 €</output>
+      </div>
+      <div class="crow">
+        <label for="cLess">Занятий в месяц</label>
+        <input type="range" id="cLess" min="1" max="12" step="1" value="4">
+        <output id="oLess">4</output>
+      </div>
+      <div class="crow">
+        <label for="cMon">Месяцев</label>
+        <input type="range" id="cMon" min="1" max="24" step="1" value="6">
+        <output id="oMon">6</output>
+      </div>
+      <div class="cbars">
+        <div class="cbar"><span class="cl">Репетитор</span><span class="ct"><i id="barA"></i></span><b id="sumA">720 €</b></div>
+        <div class="cbar good"><span class="cl">Stellas</span><span class="ct"><i id="barB"></i></span><b>30 €</b></div>
+      </div>
+      <p class="cverdict" id="verdict"></p>
     </div>
-    <div style="height:30px"></div>
-    <h3 class="big-state rv">Поэтому в <em>Stellas</em> к каждому правилу идёт <u>упражнение с разбором</u>, а не только объяснение.</h3>
+    <div style="height:16px"></div>
+    <p class="rv" style="font-size:13.5px;font-weight:600;color:rgba(11,11,12,.62);max-width:62ch">
+      Репетитор — это хорошо, я не против. Но платить 30 € за час, чтобы тебе объяснили то,
+      что можно прочитать и отработать самому, — дорого. Живого человека лучше тратить на разговор,
+      а грамматику и слова забрать в систему.
+    </p>
   </div>
 </section>
 
 <section class="sec" style="background:#FAFAFB;padding-block:56px">
   <div class="wrap">
-    <p class="mono-label rv">Что внутри</p>
+    <p class="mono-label rv">Что внутри за эти 30 €</p>
     <div style="height:22px"></div>
     <div class="stats">
       <div class="stat rv-s"><b data-count="340" data-suffix="+">0</b><div class="l">гайдов</div><div class="s">от A0 до C1</div></div>
@@ -794,28 +967,22 @@ html.nofx .rv,html.nofx .rv-s,html.nofx .tok,html.nofx .rline{
   </div>
 </section>
 
+<!-- галерея -->
 <section class="sec" id="inside">
   <div class="wrap">
-    <div class="sh rv"><span class="n">08</span><span class="t">Как это выглядит внутри</span></div>
+    <div class="sh rv"><span class="n">08</span><span class="t">Не верь словам. Смотри экраны</span></div>
     <p class="lead rv">
-      Есть тренажёр <b>Sentence Builder</b> — ровно то, чем ты только что занимался на этой странице,
-      только с проверкой и объяснением ошибки. Плюс вся грамматика деревом: видно, где ты и что дальше.
+      Это реальные страницы платформы, без фотошопа. Тапни любую — откроется крупно.
     </p>
-  </div>
-  <div style="height:26px"></div>
-  <div class="wrap">
+    <div style="height:26px"></div>
+    <div class="bento" id="bento"></div>
+    <div style="height:30px"></div>
+    <p class="mono-label rv">И в движении</p>
+    <div style="height:14px"></div>
     <div class="shots">
-      <figure class="shot rv-s">
-        <img src="assets/platform/p5-builder.jpg" alt="Тренажёр Sentence Builder" loading="lazy">
-        <figcaption class="cap">Sentence Builder<i>Собираешь порядок слов руками, приложение проверяет</i></figcaption>
-      </figure>
       <figure class="shot rv-s">
         <video src="assets/video/grammar.mp4" autoplay muted loop playsinline preload="metadata"></video>
         <figcaption class="cap">Разбор темы целиком<i>Как образуется, таблицы, примеры — в одном месте</i></figcaption>
-      </figure>
-      <figure class="shot rv-s">
-        <img src="assets/platform/p3-guide.jpg" alt="Дерево грамматики" loading="lazy">
-        <figcaption class="cap">Вся грамматика деревом<i>От местоимений до склонений — видно маршрут</i></figcaption>
       </figure>
       <figure class="shot rv-s">
         <video src="assets/video/ai.mp4" autoplay muted loop playsinline preload="metadata"></video>
@@ -823,48 +990,58 @@ html.nofx .rv,html.nofx .rv-s,html.nofx .tok,html.nofx .rline{
       </figure>
       <figure class="shot rv-s">
         <video src="assets/video/topic.mp4" autoplay muted loop playsinline preload="metadata"></video>
-        <figcaption class="cap">Интерактивные темы B2–C1<i>Те, что реально встречаются на экзаменах</i></figcaption>
-      </figure>
-      <figure class="shot rv-s">
-        <img src="assets/platform/p6-tracker.jpg" alt="Трекер прогресса" loading="lazy">
-        <figcaption class="cap">Трекер привычек<i>Видно, на какой неделе ты сдулся</i></figcaption>
-      </figure>
-      <figure class="shot rv-s">
-        <img src="assets/platform/p1-home.jpg" alt="Главная страница платформы" loading="lazy">
-        <figcaption class="cap">Подборки под уровень<i>Фильмы, книги, подкасты — уже отсортированы</i></figcaption>
+        <figcaption class="cap">Интерактивные темы B2–C1<i>Словарь, текст, диалоги, тест в одном приложении</i></figcaption>
       </figure>
     </div>
   </div>
 </section>
 
+<!-- телефоны -->
+<section class="sec phones-sec" style="background:var(--pink)">
+  <div class="wrap">
+    <p class="mono-label rv" style="color:rgba(11,11,12,.55)">В кармане</p>
+    <div style="height:12px"></div>
+    <h2 class="disp rv" style="font-size:clamp(34px,9vw,76px)">Пять минут в очереди —<br>это пять минут немецкого</h2>
+    <div style="height:14px"></div>
+    <p class="lead rv" style="color:var(--ink)">Notion ставится на телефон, и платформа открывается <b>даже без интернета</b>:
+      в метро, в приёмной у врача, в очереди в Ausländerbehörde. Там, где ты сейчас листаешь ленту.</p>
+    <div class="phones" id="phones"></div>
+  </div>
+</section>
+
+<!-- до / после -->
+<section class="sec" id="vs">
+  <div class="wrap">
+    <div class="sh rv"><span class="n">09</span><span class="t">Сейчас и через три месяца</span></div>
+    <div class="vs rv-s" id="vsTable"></div>
+  </div>
+</section>
+
 <section class="sec" style="padding-top:0">
   <div class="wrap">
-    <div class="sh rv"><span class="n">09</span><span class="t">Что превращает правило в рефлекс</span></div>
+    <div class="sh rv"><span class="n">10</span><span class="t">Что превращает правило в рефлекс</span></div>
     <div class="rows" id="stRows"></div>
   </div>
 </section>
 
-<section class="sec" style="background:#FAFAFB">
+<!-- отзывы -->
+<section class="sec" id="reviews" style="background:var(--night);color:#fff">
   <div class="wrap">
-    <div class="sh rv"><span class="n">10</span><span class="t">Что пишут те, кто уже внутри</span></div>
-    <p class="lead rv">Скриншоты из личных сообщений. Как есть, без правок.</p>
-  </div>
-  <div style="height:24px"></div>
-  <div class="wrap">
-    <div class="revs">
-      <div class="rev rv-s"><img src="assets/reviews/r1.jpg" alt="Отзыв о платформе" loading="lazy"></div>
-      <div class="rev rv-s"><img src="assets/reviews/r3.jpg" alt="Отзыв о платформе" loading="lazy"></div>
-      <div class="rev rv-s"><img src="assets/reviews/r2.jpg" alt="Отзыв о платформе" loading="lazy"></div>
-      <div class="rev rv-s"><img src="assets/reviews/r4.jpg" alt="Отзыв о платформе" loading="lazy"></div>
-      <div class="rev rv-s"><img src="assets/reviews/r5.jpg" alt="Отзыв о платформе" loading="lazy"></div>
-      <div class="rev rv-s"><img src="assets/reviews/r6.jpg" alt="Отзыв о платформе" loading="lazy"></div>
+    <div class="sh rv"><span class="n" style="color:var(--yellow)">11</span><span class="t">Им тоже было сложно</span></div>
+    <p class="lead rv" style="color:#B9B9C4">Скриншоты из личных сообщений. Без правок, имена скрыты.</p>
+    <div style="height:26px"></div>
+    <div class="quotes" id="quotes"></div>
+    <div style="height:30px"></div>
+    <div class="wall" id="wall"></div>
+    <div style="text-align:center;margin-top:18px">
+      <button class="btn btn-ghost" id="wallMore" type="button">Показать все отзывы</button>
     </div>
   </div>
 </section>
 
 <section class="sec" id="faq">
   <div class="wrap">
-    <h2 class="kicker rv" style="margin-bottom:26px">Частые<br>вопросы</h2>
+    <h2 class="kicker rv" style="margin-bottom:26px">Сомневаешься?<br>Правильно.</h2>
     <div class="faq" id="faq"></div>
   </div>
 </section>
@@ -874,7 +1051,18 @@ html.nofx .rv,html.nofx .rv-s,html.nofx .tok,html.nofx .rline{
     <div class="band band-b rv-s">
       <p class="mono-label" style="color:rgba(11,11,12,.55)">Цена</p>
       <div style="height:12px"></div>
-      <h2 class="disp" style="font-size:clamp(32px,9vw,72px)">Один платёж.<br>Доступ навсегда.</h2>
+      <h2 class="disp" style="font-size:clamp(32px,9vw,72px)">Как один урок<br>у репетитора.<br>Только навсегда.</h2>
+      <div style="height:18px"></div>
+      <ul class="offer">
+        <li>340+ гайдов: объяснение, видео, упражнение и разбор ответа</li>
+        <li>Sentence Builder и интерактивные мини-приложения</li>
+        <li>7500+ слов с озвучкой и системой интервальных повторений</li>
+        <li>Лексика по ситуациям: врач, Amt, магазин, работа</li>
+        <li>Раздел экзаменов: Goethe, telc, DTZ, ÖSD, TestDaF</li>
+        <li>Фильмы, книги и подкасты, уже разложенные по уровням</li>
+        <li>Трекер привычек и планер обучения</li>
+        <li>Все будущие обновления — бесплатно</li>
+      </ul>
       <div class="price-grid">
         <div class="pc">
           <div class="lvl">A0–A2</div><div class="amt">20 €</div>
@@ -889,14 +1077,16 @@ html.nofx .rv,html.nofx .rv-s,html.nofx .tok,html.nofx .rline{
         <div class="pc best">
           <span class="tagx">выгоднее</span>
           <div class="lvl">A0–C1</div><div class="amt">30 €<span class="old">40 €</span></div>
-          <div class="note2">Обе платформы вместе. Весь путь.</div>
-          <ul><li>340+ гайдов</li><li>7500+ слов с озвучкой</li><li>Раздел экзаменов</li><li>Все обновления бесплатно</li></ul>
+          <div class="note2">Обе платформы. Весь путь до C1.</div>
+          <ul><li>Экономия 10 €</li><li>Не нужно докупать уровень потом</li><li>Все обновления бесплатно</li></ul>
         </div>
       </div>
       <div style="height:26px"></div>
-      <a class="btn btn-k btn-lg" href="https://app.lava.top/801303618?tabId=products&sort=published" target="_blank" rel="noopener">Забрать доступ →</a>
+      <a class="btn btn-k btn-lg cta-pulse" href="https://app.lava.top/801303618?tabId=products&sort=published" target="_blank" rel="noopener">Забрать A0–C1 за 30 € →</a>
       <div style="height:14px"></div>
-      <p style="font-size:13px;font-weight:600;color:rgba(11,11,12,.6)">
+      <p style="font-size:13px;font-weight:600;color:rgba(11,11,12,.65);line-height:1.5">
+        Оплата один раз, без подписки. Цену планирую поднять после ближайших обновлений —
+        кто купил раньше, получает их бесплатно.<br>
         Вопросы — в личку <a href="https://t.me/stellasdeutsch" target="_blank" rel="noopener" style="text-decoration:underline">@stellasdeutsch</a>
       </p>
     </div>
@@ -907,13 +1097,24 @@ html.nofx .rv,html.nofx .rv-s,html.nofx .tok,html.nofx .rline{
   <div class="wrap">
     <div class="band band-p rv-s" style="text-align:center">
       <p class="disp" style="font-size:clamp(28px,7.5vw,64px);color:rgba(11,11,12,.45)">
-        Правила можно<br>прочитать за час.<br><span style="color:var(--ink)">Рефлекс строится<br>повторениями.</span>
+        Через год ты будешь<br>говорить по-немецки.<br><span style="color:var(--ink)">Вопрос — с системой<br>или всё ещё по вкладкам.</span>
       </p>
       <div style="height:26px"></div>
-      <a class="btn btn-k btn-lg" href="https://app.lava.top/801303618?tabId=products&sort=published" target="_blank" rel="noopener">Начать тренировать →</a>
+      <a class="btn btn-k btn-lg" href="https://app.lava.top/801303618?tabId=products&sort=published" target="_blank" rel="noopener">Начать сегодня →</a>
+      <div style="height:18px"></div>
+      <p style="font-size:14px;font-weight:600;max-width:52ch;margin:0 auto;line-height:1.55">
+        P.S. Я сам учу немецкий в Австрии и знаю, сколько времени съедают поиски материалов.
+        Stellas — это то, что я хотел бы иметь с первого дня.
+      </p>
     </div>
   </div>
 </section>
+
+<div class="lbox" id="lbox" role="dialog" aria-modal="true" aria-label="Скриншот крупно" hidden>
+  <button class="lbx" id="lbClose" aria-label="Закрыть">×</button>
+  <img id="lbImg" alt="">
+  <p id="lbCap"></p>
+</div>
 
 <!-- ================= FOOTER ================= -->
 <footer class="foot">
@@ -961,7 +1162,7 @@ html.nofx .rv,html.nofx .rv-s,html.nofx .tok,html.nofx .rline{
 </div>
 
 <div class="sticky" id="sticky">
-  <div class="st">Платформа A0–C1<i>30 € · доступ навсегда</i></div>
+  <div class="st">Весь немецкий A0–C1<i>30 € один раз · без подписки</i></div>
   <a href="https://app.lava.top/801303618?tabId=products&sort=published" target="_blank" rel="noopener">Забрать</a>
 </div>
 
@@ -1274,20 +1475,22 @@ const ERRS = [
 
 /* ================= РЕКЛАМА: ряды и FAQ ================= */
 const ST_ROWS = [
-  ['row-p','🏗️','Тренажёр вместо теории','На платформе есть <b>Sentence Builder</b>: слова вперемешку, ты собираешь порядок и нажимаешь «Проверить». Ошибся — приложение показывает, где именно. Это ровно тот навык, который ломается в живом разговоре.'],
-  ['row-w','🌳','Грамматика деревом, а не списком','Видно весь маршрут: род существительных → артикли → падежи → порядок слов → времена → Konjunktiv. Понятно, где ты сейчас и что логично брать следующим. Никакого «а что учить дальше».'],
-  ['row-y','🔁','Разбор, а не галочка','В каждом упражнении после ответа идёт объяснение — <b>почему</b> так, а не «неверно». Правило перестаёт быть текстом и становится привычкой примерно на двадцатом повторении.'],
-  ['row-b','🤖','ИИ-собеседник для практики','Пишешь по-немецки, он отвечает в роли. Можно строить фразу криво и переспрашивать по три раза — <b>ему не надоест и не станет неловко</b>. Живому человеку — станет.'],
-  ['row-m','📴','Работает офлайн','Notion ставится на телефон. Пять минут в очереди — это пять минут тренировки порядка слов, а не пролистывания ленты.'],
+  ['row-p','🏗️','Тренажёр вместо теории','Есть <b>Sentence Builder</b>: слова вперемешку, ты собираешь порядок и жмёшь «Проверить». Ошибся — видно, где именно. Ровно тот навык, который ломается в живом разговоре.'],
+  ['row-w','🌳','Грамматика деревом, а не списком','Весь маршрут на одной странице: артикли → падежи → порядок слов → времена → Konjunktiv. Отмечаешь пройденное и видишь, что брать следующим. Никакого «а что учить дальше».'],
+  ['row-y','🔁','Разбор, а не галочка','После каждого ответа — объяснение, <b>почему</b> так. Правило перестаёт быть текстом и становится привычкой примерно на двадцатом повторении.'],
+  ['row-b','🧠','Интервальные повторения','Слова возвращаются к тебе ровно тогда, когда начинают забываться. Та самая жёлтая линия на графике выше — только в твоём телефоне.'],
+  ['row-m','🤖','ИИ-собеседник','Пишешь по-немецки, он отвечает в роли. Можно ошибаться и переспрашивать по три раза — <b>ему не надоест и не станет неловко</b>.'],
   ['row-p','♾️','Один платёж вместо подписки','Подписка мотивирует платить, а не учить. Здесь платишь один раз и заходишь через год, два, пять. Обновления уже оплачены.']
 ];
 
 const FAQ = [
-  ['С какого уровня это имеет смысл?','Порядок слов начинается на A1 и добивает людей на B2. На платформе есть и азы, и экзаменационные темы — берёшь свой уровень.'],
+  ['У меня нет времени. Это не для меня?','Как раз для тебя. Гайд открывается за секунду с телефона и читается за 5–10 минут. Это не курс с расписанием, а справочник: зашёл, закрыл тему, вышел.'],
+  ['Я уже пробовал приложения и бросил. Чем это лучше?','Приложения дают кусочки без объяснений. Здесь каждое правило разобрано по-человечески, как на этой странице, и к нему идёт упражнение с разбором ошибок. Плюс трекер, который видно — и который стыдно бросать.'],
+  ['30 € — а вдруг не подойдёт?','Посмотри на эту страницу. Весь материал на платформе написан в таком же стиле. Если этот гайд зашёл — остальные 340 зайдут тоже. Если остались вопросы до покупки, напиши в личку @stellasdeutsch.'],
+  ['С какого уровня имеет смысл?','С нуля. Есть A0 с алфавитом и первыми фразами, и есть экзаменационные темы B2–C1. Берёшь свой уровень или сразу весь путь.'],
   ['Это подписка?','Нет. Один платёж — доступ навсегда. Никаких ежемесячных списаний.'],
-  ['Работает без интернета?','Да. Платформа собрана в Notion: ставишь их приложение на телефон или ноутбук и открываешь материалы офлайн.'],
-  ['Там только грамматика?','Нет. Грамматика, лексика по ситуациям, фильмы и подкасты по уровням, 7500+ слов с озвучкой и раздел подготовки к экзаменам.'],
-  ['Обновления платные?','Нет. Купил один раз — все дальнейшие обновления и новые разделы приходят бесплатно.'],
+  ['Работает без интернета?','Да. Платформа собрана в Notion: ставишь приложение на телефон или ноутбук и открываешь материалы офлайн.'],
+  ['Обновления платные?','Нет. Все новые разделы и обновления для купивших — бесплатно.'],
   ['Как получить доступ после оплаты?','Оплачиваешь по ссылке и получаешь доступ. Если что-то пошло не так — пиши в личку @stellasdeutsch, разберёмся.']
 ];
 
@@ -1330,11 +1533,122 @@ function mq(el,arr){el.setAttribute('aria-hidden','true');
   el.innerHTML=(arr.map(w=>`<span>${esc(w)}</span><span>✦</span>`).join('')).repeat(2)}
 mq($('#mq1'),MQ1); mq($('#mq2'),MQ2);
 
+
+/* ================= РЕКЛАМА: боли, калькулятор, галерея, телефоны, отзывы ================= */
+const PAINS = [
+  ['😶','«Wie bitte?» во второй раз','Немец переспрашивает, ты теряешься и переходишь на английский. Или просто киваешь.'],
+  ['💼','Собеседование прошло «нормально»','Тебя поняли. Но место отдали тому, кто говорил увереннее. Опыт у вас был одинаковый.'],
+  ['🏠','Третий год в стране — и тишина','С соседями и коллегами ты улыбаешься и молчишь. Всё понимаешь, а сказать не успеваешь.'],
+  ['🗂️','20 вкладок и папка «на потом»','Три приложения, ютуб, скриншоты правил. Материала море, системы ноль, прогресса не видно.'],
+  ['💸','Репетитор за 30 € в час','Каждый месяц минус 120 €. А половина урока уходит на объяснение того, что можно прочитать самому.'],
+  ['📉','B1 всё никак не наступает','Ты откладываешь разговор «до уровня получше». Уровень не растёт, потому что без практики он не растёт.']
+];
+$('#painlist').innerHTML = PAINS.map(([ic,t,d])=>`
+  <button type="button" class="pain rv-s"><span class="pi" aria-hidden="true">${ic}</span>
+  <span class="pt"><b>${esc(t)}</b><span class="pd">${esc(d)}</span></span></button>`).join('');
+$$('#painlist .pain').forEach(b=>b.addEventListener('click',()=>b.classList.toggle('hit')));
+
+(function(){
+  const r=$('#cRate'), l=$('#cLess'), m=$('#cMon');
+  const fmt=v=>Math.round(v).toLocaleString('ru-RU')+' €';
+  function upd(){
+    const rate=+r.value, les=+l.value, mon=+m.value, sum=rate*les*mon;
+    $('#oRate').textContent=rate+' €'; $('#oLess').textContent=les; $('#oMon').textContent=mon;
+    $('#sumA').textContent=fmt(sum);
+    const max=Math.max(sum,30);
+    $('#barA').style.width=(sum/max*100)+'%';
+    $('#barB').style.width=Math.max(30/max*100,2.5)+'%';
+    const x=Math.round(sum/30);
+    $('#verdict').innerHTML = x>1
+      ? `Это <em>в ${x} раз</em> больше, чем вся платформа от A0 до C1. И репетитор через ${mon} мес. закончится, а доступ — нет.`
+      : 'Даже один урок стоит как весь доступ навсегда.';
+  }
+  [r,l,m].forEach(el=>el.addEventListener('input',upd)); upd();
+})();
+
+const SHOTS = [
+  ['assets/platform/p5-builder.jpg','Sentence Builder','Собираешь порядок слов — приложение проверяет','wide'],
+  ['assets/shots/b1c1-home.jpg','Главная B1–C1','Навигация, заметки, ресурсы под уровень',''],
+  ['assets/shots/grammar-check.jpg','Чек-лист грамматики','Отмечаешь пройденное и видишь, что осталось',''],
+  ['assets/shots/grammar-b1.jpg','Грамматика по уровням','Plusquamperfekt, Passiv, Futur — по порядку',''],
+  ['assets/shots/srs.jpg','Интервальные повторения','Карточки возвращаются, когда начинаешь забывать',''],
+  ['assets/shots/audio-vocab.jpg','Слова с аудио','Озвучка и транскрипция для каждой фразы','wide'],
+  ['assets/platform/p8-situations.jpg','Лексика по ситуациям','Врач, аптека, касса, возврат товара',''],
+  ['assets/shots/topics-b1.jpg','Темы B1–C1','Здоровье, работа, спорт, путешествия',''],
+  ['assets/shots/planner.jpg','Планер обучения','Календарь, чтобы учить по плану, а не когда вспомнил',''],
+  ['assets/shots/materials.jpg','Материалы и тесты','Диалоги, упражнения, игры по уровням',''],
+  ['assets/platform/p7-work.jpg','Немецкий для работы','Гастро, склад, клининг, отель','wide'],
+  ['assets/shots/exams.jpg','Подготовка к экзаменам','Пробные тесты Goethe, telc и других',''],
+  ['assets/platform/p6-tracker.jpg','Трекер привычек','Видно, на какой неделе ты сдулся',''],
+  ['assets/platform/p3-guide.jpg','Дерево грамматики','От местоимений до склонений',''],
+  ['assets/platform/p4-words.jpg','Словарь уровня','Слова с примерами и озвучкой',''],
+  ['assets/platform/p1-home.jpg','Главная A0–A2','Фильмы, книги, подкасты — уже отсортированы','wide']
+];
+$('#bento').innerHTML = SHOTS.map(([src,t,d,cls])=>`
+  <button type="button" class="tile ${cls} rv-s" data-src="${src}" data-cap="${esc(t)} — ${esc(d)}">
+    <img src="${src}" alt="${esc(t)}" loading="lazy">
+    <span class="tc"><b>${esc(t)}</b><i>${esc(d)}</i></span>
+  </button>`).join('');
+
+$('#phones').innerHTML = [4,1,3,5,2,6,7].map(n=>`<div class="ph"><img src="assets/mobile/m${n}.jpg" alt="Платформа Stellas на телефоне" loading="lazy"></div>`).join('');
+(function(){
+  const phs=$$('#phones .ph'), mid=(phs.length-1)/2;
+  const fan=()=>{
+    const wide=innerWidth>=768, step=wide?14:11, shift=wide?70:34;
+    phs.forEach((p,i)=>{
+      const k=i-mid;
+      p.style.transform=`translateX(calc(-50% + ${k*shift}px)) rotate(${k*step}deg)`;
+      p.style.zIndex=String(10-Math.abs(Math.round(k)));
+    });
+  };
+  if(reduce||NOFX){ fan(); return }
+  const o=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ fan(); o.disconnect() } }),{threshold:.35});
+  o.observe($('#phones'));
+  addEventListener('resize',()=>{ if(phs[0].style.transform) fan() });
+})();
+
+const VS = [
+  ['Без системы','Со Stellas'],
+  ['Ищешь правило по ютубу по 20 минут','Открыл гайд — всё на одной странице'],
+  ['Понял и забыл через три дня','Упражнение с разбором закрепило'],
+  ['Слова из списков вылетают','Интервальные повторения держат в памяти'],
+  ['Не понимаешь, что учить дальше','Дерево грамматики показывает маршрут'],
+  ['Молчишь, потому что строишь фразу','Порядок слов собирается на автомате'],
+  ['120 € в месяц репетитору','30 € один раз и навсегда']
+];
+$('#vsTable').innerHTML = VS.map((r,i)=>`<div class="vsr ${i?'':'head'}"><div>${i?'✕ ':''}${esc(r[0])}</div><div>${i?'✓ ':''}${esc(r[1])}</div></div>`).join('');
+
+const QUOTES = [
+  ['Начинал с уровня A2 и нужно было как можно скорее подтянуться до B2. <mark>С помощью вашего курса смог это сделать.</mark>','из отзыва ученика'],
+  ['Зазубривание и повторение по стандартным книжкам, курсам и т.п. особого удовольствия не приносит… Но что я вижу здесь: и скорость, и результат, и удовольствие… <mark>Эта инвестиция окупается сполна.</mark>','из отзыва ученицы'],
+  ['Моё самостоятельное изучение немецкого языка ускорилось в разы… Огромный плюс — <mark>это очень доступная цена за такой объём материала.</mark>','из отзыва ученицы']
+];
+$('#quotes').innerHTML = QUOTES.map(([q,c])=>`<figure class="quote rv-s"><blockquote>«${q}»</blockquote><figcaption>${esc(c)}</figcaption></figure>`).join('');
+
+const WALL = ['x6','x13','cert','x9','x1','x3','x12','x10','x4','x5','x7','x8','x2','x11','r1','r3'];
+$('#wall').innerHTML = WALL.map((n,i)=>`<button type="button" class="wi ${i>=8?'extra':''}" data-src="assets/reviews/${n}.jpg" data-cap="Отзыв из личных сообщений">
+  <img src="assets/reviews/${n}.jpg" alt="Отзыв о платформе Stellas" loading="lazy"></button>`).join('');
+$('#wallMore').addEventListener('click',e=>{ $('#wall').classList.add('all'); e.currentTarget.remove() });
+
+(function(){
+  const box=$('#lbox'), img=$('#lbImg'), cap=$('#lbCap');
+  document.addEventListener('click',e=>{
+    const t=e.target.closest('.tile,.wi'); if(!t) return;
+    img.src=t.dataset.src; img.alt=t.dataset.cap||''; cap.textContent=t.dataset.cap||'';
+    box.hidden=false; document.body.style.overflow='hidden';
+  });
+  const close=()=>{ box.hidden=true; img.removeAttribute('src'); document.body.style.overflow='' };
+  $('#lbClose').addEventListener('click',close);
+  box.addEventListener('click',e=>{ if(e.target===box) close() });
+  addEventListener('keydown',e=>{ if(e.key==='Escape' && !box.hidden) close() });
+})();
+
 /* ================= НАБЛЮДАТЕЛИ ================= */
 if(NOFX){
   $$('.rv,.rv-s').forEach(el=>el.classList.add('in'));
   $$('[data-count]').forEach(el=>el.textContent=(+el.dataset.count).toLocaleString('ru-RU')+(el.dataset.suffix||''));
   $('#klammer').classList.add('in');
+  $('#curve').classList.add('in');
 }
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},
   {threshold:.12,rootMargin:'0px 0px -8% 0px'});
@@ -1345,11 +1659,12 @@ const rowIO=new IntersectionObserver(es=>{es.forEach(e=>{
   $$('.rv-s',e.target).forEach((c,i)=>setTimeout(()=>c.classList.add('in'), reduce?0:i*90));
   rowIO.unobserve(e.target);
 })},{threshold:.05});
-$$('.rows,.shots,.revs,.stats,.errs').forEach(el=>rowIO.observe(el));
+$$('.rows,.shots,.revs,.stats,.errs,.painlist,.bento,.quotes').forEach(el=>rowIO.observe(el));
 
 const klIO=new IntersectionObserver(es=>{es.forEach(e=>{
   if(e.isIntersecting){e.target.classList.add('in'); klIO.unobserve(e.target)}})},{threshold:.3});
 klIO.observe($('#klammer'));
+klIO.observe($('#curve'));
 
 const cIO=new IntersectionObserver(es=>{es.forEach(e=>{
   if(!e.isIntersecting)return;
